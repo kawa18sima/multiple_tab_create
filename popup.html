@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+    <script src="js/vue.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="createTab" class="createTab">タブ作成</button>
+      <table>
+        <tbody>
+          <tr v-for="url in urls">
+            <td class="url">{{url}}</td>
+            <td><button v-on:click="deleteUrl(url)">削除</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <form v-on:submit.prevent>
+        <input type="text" v-model="addUrl">
+        <button v-on:click="addUrls">追加</button>
+      </form>
+    </div>
+    <script src="js/popup.js"></script>
+  </body>
+</html>
